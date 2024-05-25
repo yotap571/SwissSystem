@@ -2,7 +2,7 @@
 {
 
 
-    public class Class1
+    public class UserAuth
     {
         public string username { get; set; }
         public string password { get; set; }
