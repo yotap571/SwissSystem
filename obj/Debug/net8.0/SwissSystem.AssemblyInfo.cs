@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SwissSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b00cc4995d31283f7228c9fe787995e73b673fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+36b5d4c47d482d07a3ca0db7af3612147c677301")]
 [assembly: System.Reflection.AssemblyProductAttribute("SwissSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SwissSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

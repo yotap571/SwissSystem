@@ -2,7 +2,25 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div @* style="background-color:#155f82;height:80vh" *@>
+    <div>
+        <h2 style="text-align:center;padding-top:10px;">Swiss System</h2>
+    </div>
+    <div style="margin-left:10px;">
+        <div>
+            <a class="btn btn-info ">2023 </a>
+            <a class="btn  btn-info ">2024</a>
+            <a class="btn  btn-info">2025</a>
+        </div>
+        <div>
+            <a class="btn btn-outline-success" style="margin:10px 0 10px 0;" asp-controller="Home" asp-action="AddEvent">Add Event </a>
+
+        </div>
+        <table class="table table-bordered" style="border-color:#df7132">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+        </table>
+    </div>
 </div>
