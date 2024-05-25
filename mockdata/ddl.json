@@ -1,0 +1,77 @@
+[{
+    "cfg_type": "ddl",
+    "cfg_name": "TYPE",
+    "cfg_display": "เดี่ยว",
+    "cfg_val1": "",
+    "cfg_val2": "",
+    "cfg_val3": "",
+    "cfg_val4": "",
+    "cfg_flag": "Y",
+    "__v": 0
+  },
+  {
+    "cfg_type": "ddl",
+    "cfg_name": "TYPE",
+    "cfg_display": "คู่",
+    "cfg_val1": "",
+    "cfg_val2": "",
+    "cfg_val3": "",
+    "cfg_val4": "",
+    "cfg_flag": "Y",
+    "__v": 0
+  },
+  {
+    "cfg_type": "ddl",
+    "cfg_name": "MODEL",
+    "cfg_display": "20 ปี",
+    "cfg_val1": "",
+    "cfg_val2": "",
+    "cfg_val3": "",
+    "cfg_val4": "",
+    "cfg_flag": "Y",
+    "__v": 0
+  },
+  {
+    "cfg_type": "ddl",
+    "cfg_name": "MODEL",
+    "cfg_display": "12 ปี",
+    "cfg_val1": "",
+    "cfg_val2": "",
+    "cfg_val3": "",
+    "cfg_val4": "",
+    "cfg_flag": "Y",
+    "__v": 0
+  },
+  {
+    "cfg_type": "ddl",
+    "cfg_name": "MODEL",
+    "cfg_display": "11 ปี",
+    "cfg_val1": "",
+    "cfg_val2": "",
+    "cfg_val3": "",
+    "cfg_val4": "",
+    "cfg_flag": "์N",
+    "__v": 0
+  },
+  {
+    "cfg_type": "ddl",
+    "cfg_name": "MODEL",
+    "cfg_display": "12 ปี",
+    "cfg_val1": "",
+    "cfg_val2": "",
+    "cfg_val3": "",
+    "cfg_val4": "",
+    "cfg_flag": "Y",
+    "__v": 0
+  },
+  {
+    "cfg_type": "ddl",
+    "cfg_name": "TYPE",
+    "cfg_display": "ทีม\"",
+    "cfg_val1": "",
+    "cfg_val2": "",
+    "cfg_val3": "",
+    "cfg_val4": "",
+    "cfg_flag": "Y",
+    "__v": 0
+  }]
