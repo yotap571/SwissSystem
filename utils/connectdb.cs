@@ -13,7 +13,7 @@ namespace SwissSystem.Utils
         public IMongoDatabase db;
         public connectdb()
         {
-            var client = new MongoClient("mongodb://admin:P%40ssw0rd@localhost:27017/");
+            var client = new MongoClient("mongodb://localhost:27017/");
             db = client.GetDatabase("competition");
         }
     }
