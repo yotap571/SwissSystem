@@ -11,15 +11,15 @@
     <div class="row g-4">
         <div class="col-8">
             <label>ชื่อรายการ</label>
-            <input class="form-control" type="text" />
+            <input class="form-control" id="name" type="text" />
         </div>
         <div class="col-4">
             <label>Passcode</label>
-            <input class="form-control" type="text" />
+            <input class="form-control" id="passcode" type="text" />
         </div>
         <div class="col-5">
             <label>ประเภท</label>
-            <select class="form-control">
+            <select class="form-control" id="type">
                 @foreach (var item in type)
                 {
                     <option value="@item._id">@item.cfg_display</option>
@@ -43,7 +43,7 @@
 
         <div class="col-3">
             <label>รอบ</label>
-            <select class="form-control">
+            <select class="form-control" id="round">
                 @foreach (var item in round)
                 {
                     <option value="@item._id">@item.cfg_display</option>
@@ -52,19 +52,18 @@
         </div>
         <div class="col-9">
             <label>Note</label>
-            <input class="form-control" type="text" />
+            <input class="form-control" id="note" type="text" />
         </div>
         <div class="col-12">
             <label>สถานที่</label>
-            
-            <input type="text" class="form-control"   >
+            <input class="form-control" id="location" type="text" />
         </div>
         <hr />
         <div class="col-9">
-            <button class="btn btn-primary" style="width:100%">เพิ่มการแข่งขัน</button>
+            <button class="btn btn-primary" style="width:100%" id="addevent">เพิ่มการแข่งขัน</button>
         </div>
         <div class="col-3">
-            <button class="btn btn-secondary" style="width:100%">ยกเลิก</button>
+            <button class="btn btn-secondary" style="width:100%" id=cancel>ยกเลิก</button>
         </div>
 
 
@@ -89,6 +88,36 @@
                 viewMode: "days",
                 minViewMode: "days"
             });
+
+            $('#addevent').click(function () {
+                var name = $('#name').val();
+                var passcode = $('#passcode').val();
+                var type = $('#type').val();
+                var date = $('#date').val();
+                var round = $('#round').val();
+                var note = $('#note').val();
+                var location = $('#location').val();
+                $.ajax({
+                    url: '/Home/AddEvent',
+                    type: 'POST',
+                    data: {
+                        event_name: name,
+                        event_passcode: passcode,
+                        event_type: type,
+                        event_date: date,
+                        event_round: round,
+                        event_remark: note,
+                        event_location: location
+                    },
+                    success: function (data) {
+                        alert('เพิ่มการแข่งขันเรียบร้อย');
+                    },
+                    error: function (data) {
+                        alert('เพิ่มการแข่งขันไม่สำเร็จ');
+                    }
+                });
+            });
+            
 
   
 

@@ -14,13 +14,13 @@ namespace SwissSystem.Services
     {
        
        // add event
-        public bool addevent(tblconfigs tblconfigs)
+        public bool addevent(events ev)
         {
             connectdb conn = new connectdb();
             try
             {
-                var collection = conn.db.GetCollection<tblconfigs>("tblconfigs");
-                collection.InsertOne(tblconfigs);
+                var collection = conn.db.GetCollection<events>("events");
+                collection.InsertOne(ev);
                 return true;
             }
             catch (Exception ex)

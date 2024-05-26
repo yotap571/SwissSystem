@@ -42,6 +42,25 @@ namespace SwissSystem.Controllers
 
             return View();
         }
+
+// from body to form
+        [HttpPost]
+        public IActionResult AddEvent([FromForm] events ev)
+        {
+            AddEventService addEventService = new AddEventService();
+            if (addEventService.addevent(ev))
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("AddEvent");
+            }
+        }
+
+        
+
+    
         public IActionResult Privacy()
         {
             return View();
