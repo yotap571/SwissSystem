@@ -8,6 +8,7 @@ using SwissSystem.Utils;
 using SwissSystem.Services;
 using MongoDB.Driver;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace SwissSystem.Controllers
 {
@@ -43,7 +44,15 @@ namespace SwissSystem.Controllers
             return View();
         }
 
-// from body to form
+        public JsonResult GetEvent(string year)
+        {
+            AddEventService addEventService = new AddEventService();
+            var result = addEventService.getevent(year);
+            return new JsonResult(result);
+        }
+       
+
+        // from body to form
         [HttpPost]
         public IActionResult AddEvent([FromForm] events ev)
         {

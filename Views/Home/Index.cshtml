@@ -8,9 +8,9 @@
     </div>
     <div style="margin-left:10px;">
         <div>
-            <a class="btn btn-info ">2023 </a>
-            <a class="btn  btn-info ">2024</a>
-            <a class="btn  btn-info">2025</a>
+            <a class="btn btn-info" id="pryear"></a>
+            <a class="btn  btn-info" id="curryear"></a>
+            <a class="btn  btn-info" id="nexyear"></a>
         </div>
         <div>
             <a class="btn btn-outline-success" style="margin:10px 0 10px 0;" asp-controller="Home" asp-action="AddEvent">Add Event </a>
@@ -24,3 +24,46 @@
         </table>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+          GetEvent();
+
+        var d = new Date(); // year -1 
+        var curryear = d.getFullYear();
+        $('#curryear').text(curryear); 
+
+        var pryear = curryear - 1;
+        $('#pryear').text(pryear);
+
+        var nexyear = curryear + 1;
+        $('#nexyear').text(nexyear);
+
+          $('#pryear').click(function () {
+              alert('pryear');
+          });
+          $('#curryear').click(function () {
+              alert('curryear');
+          });
+            $('#nexyear').click(function () {
+                alert('nexyear');
+            });
+        });
+
+           
+
+            function GetEvent() {
+                $.ajax({
+                    url: '/Home/GetEvent',
+                    type: 'GET',
+                    success: function (data) {
+                        console.log(data);
+                    },
+                    error: function (data) {
+                        console.log(data);
+                    }
+                });
+            }
+    </script>
+}

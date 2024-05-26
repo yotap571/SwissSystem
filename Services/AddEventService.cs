@@ -34,5 +34,30 @@ namespace SwissSystem.Services
             }
         }
 
+        // get event
+        public List<events> getevent(string year)
+        {
+            connectdb conn = new connectdb();
+            try
+            {
+                if (conn.db != null)
+                {
+                    var collection = conn.db.GetCollection<events>("events");
+                    if (collection != null)
+                    {
+                        var result = collection.Find(x => x.event_date.Contains(year)).ToList();
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return null;
+            }
+            return null;
+        }
+        
+        
     }
 }
