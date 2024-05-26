@@ -78,7 +78,7 @@
                 minViewMode: "years"
             });
             $('#Mcontrol').datepicker({
-                format: "MM",
+                format: "m",
                 viewMode: "months",
                 minViewMode: "months"
             });
@@ -110,6 +110,7 @@
                     },
                     success: function (data) {
                         alert('เพิ่มการแข่งขันเรียบร้อย');
+                        window.location.href = 'Home/Index';
                     },
                     error: function (data) {
                         alert('เพิ่มการแข่งขันไม่สำเร็จ');

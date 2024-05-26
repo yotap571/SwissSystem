@@ -1,0 +1,56 @@
+﻿
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+
+<div>
+    <h3>เพิ่มทีม</h3>
+    <div class="row g-2">
+        <div class="col-6">
+            <label class="form-label">ชื่อทีม</label>
+            <input class="form-control" type="text" />
+        </div>
+        <div class="col-6">
+            <label class="form-label">ประเภท</label>
+            <input class="form-control" type="text" readonly />
+        </div>
+        @* Row 2 *@
+        <div class="col-6">
+            <label class="form-label">รุ่น</label>
+            <input class="form-control" type="text" readonly />
+        </div>
+        <div class="col-6">
+            <label class="form-label">เบอร์โทรศัพท์</label>
+            <input class="form-control" type="tel" />
+        </div>
+        @* Row3 *@
+        <div class="col-6">
+            <label class="form-label">ชื่อผู้จัดการ</label>
+            <input class="form-control" />
+        </div>
+        <div class="col-6">
+            <label class="form-label">ชื่อโค้ท</label>
+            <input class="form-control" />
+        </div>
+        @* Row4 *@
+        <div class="col-6">
+            <label class="form-label">ชื่อสมาชิก</label>
+            <input type="text"
+                   class="form-control w_90"
+                   name="name[]"
+                   id="name_no_1"
+                   placeholder="ชื่อ-สกุล" />
+            <div class="form-group col-md-2 add_del_btn_outer" style="margin-top: 8px ;">
+                <a class="add_node_btn_frm_field" style="cursor: pointer;"><i class="fa fa-lg fa-plus-circle"></i><span class="sr-only">Add</span></a>
+                <a class="remove_node_btn_frm_field" style="cursor: pointer;" disabled><i class="fa fa-lg fa-minus-circle"></i><span class="sr-only">Remove</span></a>
+
+                <div class="col-6">
+                    <input type="submit" value="บันทึก" />
+                </div>
+
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>

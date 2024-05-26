@@ -29,6 +29,9 @@ namespace SwissSystem.Controllers
         {
             return View();
         }
+        public IActionResult AddTeams() { 
+           return View();
+        }
 
         public IActionResult AddEvent()
         {
