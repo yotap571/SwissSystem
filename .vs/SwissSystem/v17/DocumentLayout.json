@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\addevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\home\\addeventx.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\addeventx.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\models\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:models\\events.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\utils\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:utils\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -47,6 +47,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "events.cs",
+              "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Models\\events.cs",
+              "RelativeDocumentMoniker": "Models\\events.cs",
+              "ToolTip": "E:\\FreeLance\\SwissSystem\\Models\\events.cs",
+              "RelativeToolTip": "Models\\events.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-26T04:07:06.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "connectdb.cs",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\utils\\connectdb.cs",
               "RelativeDocumentMoniker": "utils\\connectdb.cs",
@@ -60,25 +73,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AddEventx.cshtml",
-              "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddEventx.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\AddEventx.cshtml",
-              "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddEventx.cshtml",
-              "RelativeToolTip": "Views\\Home\\AddEventx.cshtml",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAA0AAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-25T11:39:37.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAgwCMAAAAAAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAA1wDEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T10:18:58.228Z",
               "EditorCaption": ""
@@ -91,7 +91,7 @@
               "RelativeDocumentMoniker": "Views\\Home\\AddEvent.cshtml",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddEvent.cshtml",
               "RelativeToolTip": "Views\\Home\\AddEvent.cshtml",
-              "ViewState": "AQIAACoAAAAAAAAAAAAhwDQAAAAbAAAA",
+              "ViewState": "AQIAABwAAAAAAAAAAAAkwB4AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-25T10:08:24.63Z",
               "EditorCaption": ""

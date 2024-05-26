@@ -13,7 +13,7 @@ namespace SwissSystem.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string _id { get; set; }{
+        public string _id { get; set; }
         public string event_name { get; set; }
         public string event_passcode { get; set; }
         public string event_type { get; set; }

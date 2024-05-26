@@ -28,7 +28,7 @@
         </div>
 
         <div class="col-2">
-            <label>วัน</label>d
+            <label>วัน</label>
             <input type="text" class="form-control" id="Dcontrol" />
         </div>
         <div class="col-3">
@@ -92,9 +92,9 @@
             $('#addevent').click(function () {
                 var name = $('#name').val();
                 var passcode = $('#passcode').val();
-                var type = $('#type').val();
-                var date = $('#date').val();
-                var round = $('#round').val();
+                var type = $('#type').find('option:selected').text();
+                var date = $('#Ycontrol').val() + '/' + $('#Mcontrol').val() + '/' + $('#Dcontrol').val();
+                var round = $('#round').find('option:selected').text();
                 var note = $('#note').val();
                 var location = $('#location').val();
                 $.ajax({
