@@ -31,6 +31,15 @@ namespace SwissSystem.Controllers
 
         public IActionResult AddEvent()
         {
+            MasterService masterService = new MasterService();
+            var ddltype = masterService.getddl("ddl", "TYPE");
+
+            // ddltype = ddltype.OrderBy(x => x.cfg_val1).ToList();
+
+            ddltype.Insert(0, new tblconfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
+
+
+            ViewBag.ddltype = ddltype;
             return View();
         }
         public IActionResult Privacy()

@@ -4,8 +4,7 @@
 
 .vs/ 
 
-/obj/
-/bin/
-obj/project.assets.json
-obj/project.assets.json
-obj/project.nuget.cache
+// Ignore the obj and bin directories
+**/bin/
+**/obj/
+

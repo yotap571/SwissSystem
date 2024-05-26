@@ -18,9 +18,9 @@ namespace SwissSystem.Services
             try
             {
                 var collection = conn.db.GetCollection<tblconfigs>("tblconfigs");
-                var result = collection.Find(x => x.cfg_type == cfg_type && x.cfg_name == cfg_name).ToList();
+                var result = collection.Find(x => x.cfg_type == cfg_type && x.cfg_name == cfg_name && x.cfg_flag =="Y").ToList();
                 return result;
-            }
+            } 
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);

@@ -1,5 +1,7 @@
-﻿@{
+﻿
+@{
     ViewData["Title"] = "Add Event Page";
+    var type = ViewData["ddltype"] as List<tblconfigs>;
 }
 <div style="margin-left:10px;">
     <h1>เพิ่มการแข่งขันใหม่</h1>
@@ -16,11 +18,16 @@
         </div>
         <div class="col-5">
             <label>ประเภท</label>
-            <select class="form-control"></select>
+            <select class="form-control">
+                @foreach (var item in type)
+                {
+                    <option value="@item._id">@item.cfg_display</option>
+                }
+            </select>
         </div>
 
         <div class="col-2">
-            <label>วัน</label>
+            <label>วัน</label>d
             <input type="text" class="form-control" id="Dcontrol" />
         </div>
         <div class="col-3">
@@ -42,7 +49,7 @@
             <input class="form-control" type="text" />
         </div>
         <div class="col-12">
-            <label>สถาณที่</label>
+            <label>สถานที่</label>
             <input class="form-control" type="text" />
         </div>
         <hr />
@@ -58,6 +65,8 @@
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
         <script type="text/javascript">
+
+
             $('#Ycontrol').datepicker({
                 format: "yyyy",
                 viewMode: "years",
@@ -73,6 +82,9 @@
                 viewMode: "Day",
                 minViewMode: "Day"
             });
+
+  
+
         </script>   
     </div>
 </div>
