@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Add Event Page";
     var type = ViewData["ddltype"] as List<tblconfigs>;
+    var round = ViewData["ddlround"] as List<tblconfigs>;
 }
 <div style="margin-left:10px;">
     <h1>เพิ่มการแข่งขันใหม่</h1>
@@ -42,7 +43,12 @@
 
         <div class="col-3">
             <label>รอบ</label>
-            <select class="form-control"></select>
+            <select class="form-control">
+                @foreach (var item in round)
+                {
+                    <option value="@item._id">@item.cfg_display</option>
+                }
+            </select>
         </div>
         <div class="col-9">
             <label>Note</label>

@@ -12,24 +12,28 @@ namespace SwissSystem.Services
 {
     public class MasterService
     {
+        
         public List<tblconfigs> getddl(string cfg_type, string cfg_name)
         {
              connectdb conn = new connectdb();
             try
             {
-                var collection = conn.db.GetCollection<tblconfigs>("tblconfigs");
-                var result = collection.Find(x => x.cfg_type == cfg_type && x.cfg_name == cfg_name && x.cfg_flag =="Y").ToList();
-                return result;
+              if (conn.db != null)
+                {
+                    var collection = conn.db.GetCollection<tblconfigs>("tblconfigs");
+                    if (collection != null)
+                    {
+                        var result = collection.Find(x => x.cfg_type == cfg_type && x.cfg_name == cfg_name && x.cfg_flag == "Y").ToList();
+                        return result;
+                    }
+                }
             } 
             catch (Exception ex)
             {
                 Debug.WriteLine(ex.Message);
                 return null;
             }
-            finally
-            {
-                conn.db.Client.Cluster.Dispose();
-            }
+            return null;
          
         }
 

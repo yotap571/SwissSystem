@@ -33,13 +33,13 @@ namespace SwissSystem.Controllers
         {
             MasterService masterService = new MasterService();
             var ddltype = masterService.getddl("ddl", "TYPE");
-
-            // ddltype = ddltype.OrderBy(x => x.cfg_val1).ToList();
-
             ddltype.Insert(0, new tblconfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
-
-
             ViewBag.ddltype = ddltype;
+
+            var ddlround = masterService.getddl("ddl", "round");
+            ddlround.Insert(0, new tblconfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
+            ViewBag.ddlround = ddlround;
+
             return View();
         }
         public IActionResult Privacy()
