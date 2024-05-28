@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\addteams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,8 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAAC4AAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-26T08:12:30.525Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,14 +56,14 @@
               "RelativeDocumentMoniker": "Views\\Home\\AddTeams.cshtml",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddTeams.cshtml",
               "RelativeToolTip": "Views\\Home\\AddTeams.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAZAAAA",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAkwEgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-26T07:11:37.168Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -51,12 +71,11 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAQwCAAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T10:18:58.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T10:18:58.228Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "AddEvent.cshtml",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddEvent.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\AddEvent.cshtml",
@@ -64,12 +83,11 @@
               "RelativeToolTip": "Views\\Home\\AddEvent.cshtml",
               "ViewState": "AQIAAGAAAAAAAAAAAAAAAGkAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-25T10:08:24.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T10:08:24.63Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -77,8 +95,7 @@
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAA8AAAAAAAAAAAAAABQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-25T09:14:10.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-25T09:14:10.478Z"
             }
           ]
         }
