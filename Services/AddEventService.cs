@@ -45,7 +45,9 @@ namespace SwissSystem.Services
                     var collection = conn.db.GetCollection<events>("events");
                     if (collection != null)
                     {
+                        // all event
                         var result = collection.Find(x => x.event_date.Contains(year)).ToList();
+
                         return result;
                     }
                 }
