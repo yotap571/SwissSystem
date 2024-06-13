@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+
 }
 
 <div @* style="background-color:#155f82;height:80vh" *@>
@@ -21,68 +22,67 @@
             <a class="btn btn-outline-success" style="margin:10px 0 10px 0;" asp-controller="Home" asp-action="AddEvent">Add Event </a>
 
         </div>
-        <table class="table table-bordered" id="tb_event" style="border-color:#df7132">
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
-            <tr></tr>
+        <table id="tb_event" class="table table-bordered" style=" border-color:#df7132">     
+        
         </table>
     </div>
 </div>
 
 @section Scripts {
-        <script>
-            $(document).ready(function () {
-              GetEvent();
+    <script>
+        $(document).ready(function () {
+            GetEvent();
 
-            var d = new Date(); // year -1 
+            var d = new Date(); // year -1
             var curryear = d.getFullYear();
-            $('#curryear').text(curryear); 
+            $('#curryear').text(curryear);
 
             var pryear = curryear - 1;
             $('#pryear').text(pryear);
 
             var nexyear = curryear + 1;
             $('#nexyear').text(nexyear);
+            GetEvent(curryear);
 
-              $('#pryear').click(function () {
-                  alert('pryear');
-              });
-              $('#curryear').click(function () {
-                  alert('curryear');
-              });
-                $('#nexyear').click(function () {
-                    alert('nexyear');
-                });
+            $('#pryear').click(function () {
+                alert('pryear');
             });
+            $('#curryear').click(function () {
+                alert('curryear');
+            });
+            $('#nexyear').click(function () {
+                alert('nexyear');
+            });
+        });
 
 
 
-                function GetEvent() {
-                    $.ajax({
-                        url: '/Home/GetEvent',
-                        type: 'GET',
-                        success: function (data) {
-                            console.log(data);
-                            var html = '';
-                            for (var i = 0; i < data.length; i++) {
-                                html += '<tr>';
-                                html += '<td>' + data[i].event_name + '</td>';
-                                html += '<td>' + data[i].event_passcode + '</td>';
-                                html += '<td>' + data[i].event_type + '</td>';
-                                html += '<td>' + data[i].event_date + '</td>';
-                                html += '<td>' + data[i].event_round + '</td>';
-                                html += '<td>' + data[i].event_remark + '</td>';
-                                html += '<td>' + data[i].event_location + '</td>';
-                                html += '<td><a href="/Home/EditEvent/' + data[i].event_id + '">Edit</a> | <a href="javascript:void(0)" onclick="DeleteEvent(' + data[i].event_id + ')">Delete</a></td>';
-                                html += '</tr>';
-                            }
-                            $('#tb_event').html(html);
-                        },
-                        error: function (data) {
-                            console.log(data);
-                        }
-                    });
+        function GetEvent(years) {
+            $.ajax({
+                url: '/Home/GetEvent',
+                type: 'GET',
+                data: { year: years },
+                success: function (data) {
+                    var html = '';
+                    for (var i = 0; i < data.length; i++) {
+                        html += '<tr>';
+                        html += '<td style="width:60%">' + data[i].event_name + '<br>' + data[i].event_date + '  ' + data[i].event_location + '</td>';
+                        html += '<td style="width:15%">' + data[i].event_type + '<br>' + ' </td>';
+                        html += '<td style="width:15%">' + data[i].event_round + '<br>' + '</td>';
+                        html += '<td><a href="/Home/EditEvent/' + data[i].event_id + '">Edit</a> | <a href="javascript:void(0)" onclick="DeleteEvent(' + data[i].event_id + ')">Delete</a></td>';
+                        html += '</tr>';
+                    }
+                    $('#tb_event').html(html);
+
+
+
+
+                    console.log(data);
+                },
+                error: function (data) {
+                    console.log(data);
                 }
-        </script>
+            });
+        }
+    </script>
 }
