@@ -14,12 +14,17 @@ namespace SwissSystem.Services
 
         public EventService()
         {
-             var db = new ConnectDb().Connect();
+            var db = new ConnectDb().Connect();
             _events = db.GetCollection<Events>("events");
         }
 
-        public List<Events> GetEvents(string year)
+        public List<Events> GetEvents(string? year)
         {
+            if (year == null)
+            {
+                throw new ArgumentNullException(nameof(year));
+            }
+
             return _events.Find(x => x.event_date.Contains(year)).ToList();
         }
 

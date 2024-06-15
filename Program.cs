@@ -1,7 +1,11 @@
+using MongoDB.Driver;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+// IMongoClient 
+builder.Services.AddSingleton<IMongoClient>(new MongoClient("mongodb://localhost:27017"));
 
 var app = builder.Build();
 
