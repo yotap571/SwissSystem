@@ -9,7 +9,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace SwissSystem.Models
 {
 
-    public class tblconfigs
+    public class TblConfigs
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

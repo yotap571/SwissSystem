@@ -1,20 +1,30 @@
-// fuction connectdb : connect to mongo database
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MongoDB.Driver;
+using System;
 
 namespace SwissSystem.Utils
 {
-    public class connectdb
+    public class ConnectDb
     {
-        public IMongoDatabase db;
-        public connectdb()
+        public IMongoDatabase Db { get; private set; }
+
+        public IMongoDatabase Connect()
         {
-            var client = new MongoClient("mongodb://admin:P%40ssw0rd@localhost:27017/");
-            db = client.GetDatabase("competition");
+            try
+            {
+                var client = new MongoClient("mongodb://admin:P%40ssw0rd@localhost:27017/");
+                Db = client.GetDatabase("competition");
+                return Db;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error connecting to the database: " + ex.Message);
+                return null;
+            }
+        }
+
+        public IMongoCollection<T> GetCollection<T>(string collectionName)
+        {
+            return Db.GetCollection<T>(collectionName);
         }
     }
 }

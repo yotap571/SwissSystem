@@ -35,32 +35,34 @@ namespace SwissSystem.Controllers
 
         public IActionResult AddEvent()
         {
+
             MasterService masterService = new MasterService();
-            var ddltype = masterService.getddl("ddl", "TYPE");
-            ddltype.Insert(0, new tblconfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
+            var ddltype = masterService.GetConfigs("ddl", "TYPE");
+            ddltype.Insert(0, new TblConfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
             ViewBag.ddltype = ddltype;
 
-            var ddlround = masterService.getddl("ddl", "round");
-            ddlround.Insert(0, new tblconfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
+            var ddlround = masterService.GetConfigs("ddl", "round");
+            ddlround.Insert(0, new TblConfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
             ViewBag.ddlround = ddlround;
+
 
             return View();
         }
 
         public JsonResult GetEvent(string year)
         {
-            AddEventService addEventService = new AddEventService();
-            var result = addEventService.getevent(year);
+            EventService addEventService = new EventService();
+            List<Events> result = addEventService.GetEvents(year);
             return new JsonResult(result);
         }
        
 
         // from body to form
         [HttpPost]
-        public IActionResult AddEvent([FromForm] events ev)
+        public IActionResult AddEvent([FromForm] Events ev)
         {
-            AddEventService addEventService = new AddEventService();
-            if (addEventService.addevent(ev))
+            EventService addEventService = new EventService();
+            if(addEventService.CreateEvent(ev) != null)
             {
                 return RedirectToAction("Index");
             }
@@ -68,6 +70,15 @@ namespace SwissSystem.Controllers
             {
                 return RedirectToAction("AddEvent");
             }
+            // if (addEventService.CreateEvent(ev) > 0)
+            // {
+            //     return RedirectToAction("Index");
+            // }
+            // else
+            // {
+            //     return RedirectToAction("AddEvent");
+            // }
+            
         }
 
         

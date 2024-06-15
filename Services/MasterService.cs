@@ -1,52 +1,47 @@
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SwissSystem.Models;
 using SwissSystem.Utils;
-using MongoDB.Driver;
-using System.Diagnostics;
-using Newtonsoft.Json;
 
 namespace SwissSystem.Services
 {
     public class MasterService
     {
-        
-        public List<tblconfigs> getddl(string cfg_type, string cfg_name)
+        private IMongoCollection<TblConfigs> _configs;
+
+        public MasterService()
         {
-             connectdb conn = new connectdb();
-            try
-            {
-              if (conn.db != null)
-                {
-                    var collection = conn.db.GetCollection<tblconfigs>("tblconfigs");
-                    if (collection != null)
-                    {
-                        var result = collection.Find(x => x.cfg_type == cfg_type && x.cfg_name == cfg_name && x.cfg_flag == "Y").ToList();
-                        return result;
-                    }
-                }
-            } 
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-                return null;
-            }
-            return null;
-         
+            var db = new ConnectDb().Connect();
+            _configs = db.GetCollection<TblConfigs>("tblconfigs");
         }
 
-        
-        public List<tblconfigs> getddlmock(string cfg_type,string cfg_name)
+        public List<TblConfigs> GetConfigs(string cfgType, string cfgName)
         {
-            var json = System.IO.File.ReadAllText("mockdata/ddl.json");
-            var result = Newtonsoft.Json.JsonConvert.DeserializeObject<List<tblconfigs>>(json);
+            return _configs.Find(x => x.cfg_type == cfgType && x.cfg_name == cfgName).ToList();
+        }
 
+        public TblConfigs GetConfig(string id)
+        {
+            return _configs.Find(x => x._id.ToString() == id).FirstOrDefault();
+        }
 
-            return result.Where(x => x.cfg_type == cfg_type && x.cfg_name == cfg_name).ToList();
+        public TblConfigs CreateConfig(TblConfigs config)
+        {
+            _configs.InsertOne(config);
+            return config;
+        }
+
+        public void UpdateConfig(string id, TblConfigs config)
+        {
+            _configs.ReplaceOne(x => x._id.ToString() == id, config);
+        }
+
+        public void DeleteConfig(string id)
+        {
+            _configs.DeleteOne(x => x._id.ToString() == id);
         }
     }
-
-
 }

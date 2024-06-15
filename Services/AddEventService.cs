@@ -1,65 +1,47 @@
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SwissSystem.Models;
 using SwissSystem.Utils;
-using MongoDB.Driver;
-using System.Diagnostics;
-using Newtonsoft.Json;
 
 namespace SwissSystem.Services
 {
-    public class AddEventService
+    public class EventService
     {
-       
-       // add event
-        public bool addevent(events ev)
+        private IMongoCollection<Events> _events;
+
+        public EventService()
         {
-            connectdb conn = new connectdb();
-            try
-            {
-                var collection = conn.db.GetCollection<events>("events");
-                collection.InsertOne(ev);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-                return false;
-            }
-            finally
-            {
-                conn.db.Client.Cluster.Dispose();
-            }
+             var db = new ConnectDb().Connect();
+            _events = db.GetCollection<Events>("events");
         }
 
-        // get event
-        public List<events> getevent(string year)
+        public List<Events> GetEvents(string year)
         {
-            connectdb conn = new connectdb();
-            try
-            {
-                if (conn.db != null)
-                {
-                    var collection = conn.db.GetCollection<events>("events");
-                    if (collection != null)
-                    {
-                        // all event
-                        var result = collection.Find(x => x.event_date.Contains(year)).ToList();
-
-                        return result;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-                return null;
-            }
-            return null;
+            return _events.Find(x => x.event_date.Contains(year)).ToList();
         }
-        
-        
+
+        public Events GetEvent(string id)
+        {
+            return _events.Find(x => x._id.ToString() == id).FirstOrDefault();
+        }
+
+        public Events CreateEvent(Events evt)
+        {
+            _events.InsertOne(evt);
+            return evt;
+        }
+
+        public void UpdateEvent(string id, Events evt)
+        {
+            _events.ReplaceOne(x => x._id.ToString() == id, evt);
+        }
+
+        public void DeleteEvent(string id)
+        {
+            _events.DeleteOne(x => x._id.ToString() == id);
+        }
     }
 }

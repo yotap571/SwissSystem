@@ -22,10 +22,6 @@ namespace SwissSystem.Services
             {
                 return false;
             }
-
-
-
         }
-
     }
 }
