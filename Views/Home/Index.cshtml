@@ -10,7 +10,7 @@
     <div style="margin-left:10px;">
         <div>
             
-            <div style="display: flex; justify-content: center;">
+            <div style="display: flex; justify-content:space-between;">
                 <a class="btn btn-info " style="float: left;" id="pryear"></a> 
                 <a class="btn btn-info" id="curryear"></a>
                 <a class="btn btn-info" id="nexyear"></a>
@@ -31,7 +31,7 @@
 @section Scripts {
     <script>
         $(document).ready(function () {
-            GetEvent();
+            // GetEvent();
 
             var d = new Date(); // year -1
             var curryear = d.getFullYear();
@@ -66,10 +66,11 @@
                     var html = '';
                     for (var i = 0; i < data.length; i++) {
                         html += '<tr>';
-                        html += '<td style="width:60%">' + data[i].event_name + '<br>' + data[i].event_date + '  ' + data[i].event_location + '</td>';
+                        html += '<td style="width:60%"> <a href="/Detail/EventById/' + data[i]._id + '">'+data[i].event_name+'</a><br>' + data[i].event_date + '  ' + data[i].event_location + '</td>';
+                       // html += '<td><a href="/Detail/EventById/' + data[i]._id + '">' + data[i].event_name '</a></td>';
                         html += '<td style="width:15%">' + data[i].event_type + '<br>' + ' </td>';
                         html += '<td style="width:15%">' + data[i].event_round + '<br>' + '</td>';
-                        html += '<td><a href="/Home/EditEvent/' + data[i].event_id + '">Edit</a> | <a href="javascript:void(0)" onclick="DeleteEvent(' + data[i].event_id + ')">Delete</a></td>';
+                        html += '<td><a href="/Home/EditEvent/' + data[i]._id + '">Edit</a> | <a href="javascript:void(0)" onclick="DeleteEvent(' + data[i]._id + ')">Delete</a></td>';
                         html += '</tr>';
                     }
                     $('#tb_event').html(html);

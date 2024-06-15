@@ -11,7 +11,7 @@ namespace SwissSystem.Utils
         {
             try
             {
-                var client = new MongoClient("mongodb://admin:P%40ssw0rd@localhost:27017/");
+                var client = new MongoClient("mongodb://localhost:27017/");
                 Db = client.GetDatabase("competition");
                 return Db;
             }
