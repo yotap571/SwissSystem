@@ -7,32 +7,32 @@
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\detail\\eventbyid.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\home\\addteams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\addteams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\home\\addevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\addevent.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\home\\addteams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\home\\addteams.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\utils\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:utils\\connectdb.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\services\\addeventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:services\\addeventservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|e:\\freelance\\swisssystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{720200D6-0533-465C-8F24-1027579D7CF4}|SwissSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,8 +42,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\FreeLance\\SwissSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T03:43:48.971Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -52,72 +65,59 @@
               "RelativeDocumentMoniker": "Views\\Detail\\EventById.cshtml",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Detail\\EventById.cshtml*",
               "RelativeToolTip": "Views\\Detail\\EventById.cshtml*",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAkwFoAAAAAAAAA",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAkwF4AAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-15T07:31:36.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "connectdb.cs",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\utils\\connectdb.cs",
               "RelativeDocumentMoniker": "utils\\connectdb.cs",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\utils\\connectdb.cs",
               "RelativeToolTip": "utils\\connectdb.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA4AAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwA0AAAA4AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-15T06:58:39.073Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AddEventService.cs",
-              "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Services\\AddEventService.cs",
-              "RelativeDocumentMoniker": "Services\\AddEventService.cs",
-              "ToolTip": "E:\\FreeLance\\SwissSystem\\Services\\AddEventService.cs",
-              "RelativeToolTip": "Services\\AddEventService.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAjwBsAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-15T04:22:34.571Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAC4AAABuAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAC4AAABuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-26T08:12:30.525Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "AddTeams.cshtml",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddTeams.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\AddTeams.cshtml",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddTeams.cshtml",
               "RelativeToolTip": "Views\\Home\\AddTeams.cshtml",
-              "ViewState": "AQIAACAAAAAAAAAAAAAkwCcAAAAJAAAA",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAkwCoAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-26T07:11:37.168Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAjwCgAAAAMAAAA",
+              "ViewState": "AQIAAE4AAAAAAAAAAADgv0AAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-25T10:18:58.228Z",
               "EditorCaption": ""
@@ -130,20 +130,20 @@
               "RelativeDocumentMoniker": "Views\\Home\\AddEvent.cshtml",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Home\\AddEvent.cshtml",
               "RelativeToolTip": "Views\\Home\\AddEvent.cshtml",
-              "ViewState": "AQIAADEAAAAAAAAAAAAkwDMAAAAOAAAA",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAkwHAAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-25T10:08:24.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "E:\\FreeLance\\SwissSystem\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "E:\\FreeLance\\SwissSystem\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAADkAAAAAAAAAAAAAAEQAAAB9AAAA",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAEEAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-25T09:14:10.478Z",
               "EditorCaption": ""

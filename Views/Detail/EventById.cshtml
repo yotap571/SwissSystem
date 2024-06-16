@@ -65,30 +65,45 @@
                 <h3>Random </h3>
                 <hr />
                 @* <input type="file"/><button  ></button> *@
-               
-                <br />
+                
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                   @*  <span aria-hidden="true">&times;</span> *@
+                                    @*  <span aria-hidden="true">&times;</span> *@
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <input class="form-control " accept="application/vnd.ms-excel , application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" type="file" id="bfile" runat="server" />
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" id="SaveImport" class="btn btn-primary" runat="server">Save changes</button>
+                                <button type="button" id="closemodal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" id="SaveImport" class="btn btn-primary"  runat="server">Save changes</button>
                             </div>
                         </div>
                     </div>
-                </div>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" > Import</button>
-                <br />
 
+                </div>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Import</button>
+                
+                <div class="card card-body" style="height:300px">
+                    <div class="row">
+                        <div class="col-3">
+                          @*   width:1080px; *@
+                            <textarea class="text-info form-control" id="txtLog" style="height:200px;width:100%"></textarea>
+                           
+                        </div>
+                        <div class="col-2">
+                            <input type="submit" value="Random" id="BtnRandom" />
+                            <input type="submit" value="confirm" />
+                        </div>
+                        <div class="col-7">
+                            <input type="text" multiple id="res" />
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="tab-pane fade" id="Match1" role="tabpanel" aria-labelledby="personal-tab">
                 <br />
@@ -146,22 +161,16 @@
                     processData: false,
                     success: function (data) {
                         console.log(data);
-
-                        //add data.team_name to areatext 
-
-
-                        $('#exampleModal').modal('hide');
+                        $('#Xtest').val(data[1].team_name);
+                        var x;
+                        for (var i = 0; i < data.length; i++) {
+                            x += data[i].team_name + '\n';               
+                        }                       
+                        $('#txtLog').val(x);                   
+                        $('#closemodal').click();     
                     }
                 });
             });
-
-
-
-
-
-
-
-            
         });
     </script>
 }
