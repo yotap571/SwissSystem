@@ -35,16 +35,20 @@ namespace Name
             var evt = _events.Find(x => x._id.ToString() == id).FirstOrDefault();
             return View(evt);
         }
+        public JsonResult GetTeams(string event_id)
+        {
+            var teams = _teams.Find(x => x.team_event_id == event_id).ToList();
+            return new JsonResult(teams);
+        }
         public IActionResult RamdomRound1(string group_id)
         {
            var teams = _teams.Find(x => x.team_event_id == group_id).ToList().Select(x => x.team_name).ToList();
             var teamList = TeamShuffle.Shuffle(teams);
 
-            
-
             return View(teamList);
 
         }
+
     }
     
 }

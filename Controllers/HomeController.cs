@@ -77,7 +77,7 @@ namespace SwissSystem.Controllers
         }
 
         [HttpPost]
-        public JsonResult AddTeam(IFormFile bfile)
+        public JsonResult AddTeam(IFormFile bfile, string event_id)
         {
             var listTeams = new List<Teams>();
 
@@ -92,10 +92,11 @@ namespace SwissSystem.Controllers
                                     var team = new Teams
                                     {
                                         team_name = reader.GetValue(column).ToString(),
+                                        team_event_id = event_id ,
                                         create_date = DateTime.Now,
                                         create_by = "admin",
                                     };
-                                    // _teams.InsertOne(team);
+                                    _teams.InsertOne(team);
                                     listTeams.Add(team);
                                 
                             }
