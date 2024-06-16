@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SwissSystem.Utils;
-using SwissSystem.Services;
 using MongoDB.Driver;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using ExcelDataReader;
+using System.IO;
+using System.Text;
 
 namespace SwissSystem.Controllers
 {
@@ -16,9 +18,18 @@ namespace SwissSystem.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IMongoCollection<TblConfigs> _configs;
+        private readonly IMongoCollection<Events> _events;
+        private readonly IMongoCollection<Teams> _teams;
+
+
+        public HomeController(ILogger<HomeController> logger,IMongoClient client)
         {
             _logger = logger;
+            var database = client.GetDatabase("competition");
+            _events = database.GetCollection<Events>("events");
+            _configs = database.GetCollection<TblConfigs>("tblconfigs");
+            _teams = database.GetCollection<Teams>("teams");
         }
 
         public IActionResult Index()
@@ -35,13 +46,13 @@ namespace SwissSystem.Controllers
 
         public IActionResult AddEvent()
         {
+           var ddltype = _configs.Find(x => x.cfg_type == "ddl" && x.cfg_name == "TYPE").ToList();    
 
-            MasterService masterService = new MasterService();
-            var ddltype = masterService.GetConfigs("ddl", "TYPE");
             ddltype.Insert(0, new TblConfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
             ViewBag.ddltype = ddltype;
 
-            var ddlround = masterService.GetConfigs("ddl", "round");
+            // var ddlround = masterService.GetConfigs("ddl", "round");
+            var ddlround = _configs.Find(x => x.cfg_type == "ddl" && x.cfg_name == "round").ToList();    
             ddlround.Insert(0, new TblConfigs { cfg_val1 = "0", cfg_display = "----กรุณาเลือก----" });
             ViewBag.ddlround = ddlround;
 
@@ -51,8 +62,7 @@ namespace SwissSystem.Controllers
 
         public JsonResult GetEvent(string year)
         {
-            EventService addEventService = new EventService();
-            List<Events> result = addEventService.GetEvents(year);
+            List<Events> result = _events.Find(x => x.event_date.Contains(year)).ToList();
             return new JsonResult(result);
         }
        
@@ -61,24 +71,40 @@ namespace SwissSystem.Controllers
         [HttpPost]
         public IActionResult AddEvent([FromForm] Events ev)
         {
-            EventService addEventService = new EventService();
-            if(addEventService.CreateEvent(ev) != null)
-            {
-                return RedirectToAction("Index");
-            }
-            else
-            {
-                return RedirectToAction("AddEvent");
-            }
-            // if (addEventService.CreateEvent(ev) > 0)
-            // {
-            //     return RedirectToAction("Index");
-            // }
-            // else
-            // {
-            //     return RedirectToAction("AddEvent");
-            // }
+            _events.InsertOne(ev); // insert to database
+            return RedirectToAction("Index");
             
+        }
+
+        [HttpPost]
+        public JsonResult AddTeam(IFormFile bfile)
+        {
+            var listTeams = new List<Teams>();
+
+            using (var stream = bfile.OpenReadStream())
+                {
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        while (reader.Read()) // Each ROW
+                        {
+                            for (int column = 0; column < reader.FieldCount; column++)
+                            {
+                                    var team = new Teams
+                                    {
+                                        team_name = reader.GetValue(column).ToString(),
+                                        create_date = DateTime.Now,
+                                        create_by = "admin",
+                                    };
+                                    // _teams.InsertOne(team);
+                                    listTeams.Add(team);
+                                
+                            }
+                        }
+                    }
+                }
+
+            _logger.LogInformation("Add Team Success", listTeams);
+            return new JsonResult(listTeams);
         }
 
         

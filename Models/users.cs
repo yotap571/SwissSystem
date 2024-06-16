@@ -1,7 +1,5 @@
 ﻿namespace SwissSystem.Models
 {
-
-
     public class UserAuth
     {
         public string? username { get; set; }
