@@ -65,8 +65,7 @@
                 <h3>Random </h3>
                 <hr />
                 @* <input type="file"/><button  ></button> *@
-
-                <br />
+                
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -80,22 +79,24 @@
                                 <input class="form-control " accept="application/vnd.ms-excel , application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" type="file" id="bfile" runat="server" />
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" id="SaveImport" class="btn btn-primary" runat="server">Save changes</button>
+                                <button type="button" id="closemodal" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" id="SaveImport" class="btn btn-primary"  runat="server">Save changes</button>
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Import</button>
-                <br />
+                
                 <div class="card card-body" style="height:300px">
                     <div class="row">
                         <div class="col-3">
-                            <input type="text" multiple id="importText" />
+                          @*   width:1080px; *@
+                            <textarea class="text-info form-control" id="txtLog" style="height:200px;width:100%"></textarea>
+                           
                         </div>
                         <div class="col-2">
-                            <input type="submit" value="Random" />
+                            <input type="submit" value="Random" id="BtnRandom" />
                             <input type="submit" value="confirm" />
                         </div>
                         <div class="col-7">
@@ -160,9 +161,26 @@
                     processData: false,
                     success: function (data) {
                         console.log(data);
+                        $('#Xtest').val(data[1].team_name);
+                        var x;
+                        for (var i = 0; i < data.length; i++) {
+                            x += data[i].team_name ;               
+                        }                       
+                        $('#txtLog').val(x);                     
+                       // $('#exampleModal').modal('hide');
+                       // $('#exampleModal').modal('hide');
+                        $('#closemodal').click();
+                        // location.reload();                       
                     }
                 });
             });
+            $("#BtnRandom").click(function () {
+                var listRandom =[]
+
+
+            });
+                
+          
         });
     </script>
 }
