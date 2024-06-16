@@ -36,8 +36,11 @@
         @* Row4 *@
         <div class="col-6">
             <div></div>
-            <input class="form-control " accept="application/vnd.ms-excel , application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" type="file" id="bfile" runat="server" />
-            @* <label class="form-label">ชื่อสมาชิก</label>
+            <input class="form-control" accept="application/vnd.ms-excel , application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" type="file" id="bfile" name="bfile" />
+             
+           
+           
+                @* <label class="form-label">ชื่อสมาชิก</label>
           
                 <button id="addRow" type="button" class="btn btn-info" style=" margin-left:5px;">Add</button>
                 <form method="post">
@@ -55,7 +58,7 @@
         </div>
         <div class="col-6 "></div>
         <div class="col-12">
-            <input type="submit" class="btn btn-success" value="บันทึก" />
+            <button class="btn btn-success" id="SaveTeam" >บันทึก</button>
         </div>
         <br />
         @section Scripts
@@ -81,6 +84,26 @@
                     $("#total").val(rowCount);
                     $(this).closest('#inputRow').remove();
                 });
+
+                $("#SaveTeam").click(function () {
+              
+                   var bfile = $("#bfile").get(0).files[0];
+
+                    var formData = new FormData();
+                    
+                    formData.append("bfile", bfile);
+                    $.ajax({
+                        url: '/Home/AddTeam',
+                        type: 'POST',
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            alert(data);
+                        }
+                    });
+                });
+
             </script>
         }
     </div>

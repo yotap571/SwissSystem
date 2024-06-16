@@ -26,5 +26,12 @@ namespace SwissSystem.Utils
         {
             return Db.GetCollection<T>(collectionName);
         }
+        // create rows in the database
+        public void InsertRow<T>(string collectionName, T row)
+        {
+            var collection = Db.GetCollection<T>(collectionName);
+            collection.InsertOne(row);
+        }
+
     }
 }
