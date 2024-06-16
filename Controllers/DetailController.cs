@@ -40,13 +40,12 @@ namespace Name
             var teams = _teams.Find(x => x.team_event_id == event_id).ToList();
             return new JsonResult(teams);
         }
-        public IActionResult RamdomRound1(string group_id)
+        public JsonResult RamdomTeam(List<string> teams)
         {
-           var teams = _teams.Find(x => x.team_event_id == group_id).ToList().Select(x => x.team_name).ToList();
+            // var teams = _teams.Find(x => x.team_event_id == event_id).ToList().Select(x => x.team_name).ToList();
             var teamList = TeamShuffle.Shuffle(teams);
 
-            return View(teamList);
-
+            return new JsonResult(teamList);
         }
 
     }
