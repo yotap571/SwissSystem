@@ -17,11 +17,15 @@ namespace Name
         private readonly ILogger<DetailController>? _logger;
         private readonly IMongoCollection<Events>? _events;
         private readonly IMongoCollection<Teams>? _teams;
+
+        private readonly IMongoCollection<TeamRound1>? _teamRound1;
         public DetailController(ILogger<DetailController> logger,IMongoClient client)
         {
             var database = client.GetDatabase("competition");
             _events = database.GetCollection<Events>("events");
             _teams = database.GetCollection<Teams>("teams");
+            _teamRound1 = database.GetCollection<TeamRound1>("teamRound1");
+            _logger = logger;
         }
 
         public IActionResult Index()
@@ -42,10 +46,32 @@ namespace Name
         }
         public JsonResult RamdomTeam(List<string> teams)
         {
-            // var teams = _teams.Find(x => x.team_event_id == event_id).ToList().Select(x => x.team_name).ToList();
             var teamList = TeamShuffle.Shuffle(teams);
-
             return new JsonResult(teamList);
+        }
+
+        public JsonResult GetTeamRound1(string event_id)
+        {
+            var teamRound1 = _teamRound1.Find(x => x.event_id == event_id).ToList();
+            Console.WriteLine(JsonConvert.SerializeObject(teamRound1));
+            return new JsonResult(teamRound1);
+        }
+
+        public JsonResult ConfirmRandom(List<PairTeam> pairTeam, string event_id)
+        {
+            foreach (var item in pairTeam)
+            {
+                var team = new TeamRound1();
+                team.team1 = item.Team1;
+                team.team2 = item.Team2;
+                team.event_id = event_id;
+                team.round = 1;
+                team.create_date = DateTime.Now;
+                team.create_by = "admin";
+
+                _teamRound1.InsertOne(team);
+            }
+            return new JsonResult("Success");
         }
 
     }

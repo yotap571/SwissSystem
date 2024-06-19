@@ -34,7 +34,7 @@ namespace SwissSystem.Models
 /// </summary>
 
 // Compare this snippet from Models/TeamMatched.cs
-public class TeamMatched {
+public class TeamRound1 {
 
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
@@ -42,7 +42,7 @@ public class TeamMatched {
     public string? team1 { get; set; } // ทีมที่ 1
     public string? team2 { get; set; } // ทีมที่ 2
     public string? event_id { get; set; } // รหัสงาน
-    public string? round { get; set; } // รอบการแข่งขัน
+    public int round { get; set; } // รอบการแข่งขัน
     public string? score1 { get; set; } // คะแนนทีมที่ 1
     public string? score2 { get; set; } // คะแนนทีมที่ 2
     public string? remark { get; set; } // หมายเหตุ
