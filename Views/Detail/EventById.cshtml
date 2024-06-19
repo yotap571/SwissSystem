@@ -148,10 +148,10 @@
                 <h3>การจัดลำดับ (Ranking)</h3>
                 <hr />
                 <div class="col-10">
-                    <table class="table" id="tbRound1">
+                    <table class="table table-bordered" id="tbRound1">
                         <thead>
                             <tr>
-                                <th scope="col" style='text-align:center; width:50px;'>สนาม</th>
+                                <th scope="col"  style='text-align:center; width:50px;'>สนาม</th>
                                 <th scope="col" style='text-align:center;'>ทีม1</th>
                                 <th scope="col" style='text-align:center;'>คะแนน</th>
                                 <th scope="col" style='text-align:center;'>ทีม2</th>
@@ -185,7 +185,7 @@
                 <hr />
                 ลงเล่นครั้งที่ 3
             </div>
-            <div class="tab-pane fade" id="Match4" role="tabpanel" aria-labelledby="employment-tab">
+            <div class="tab-pane fade form-control"  id="Match4" role="tabpanel" aria-labelledby="employment-tab">
                 <br />
                 <h3>การจัดลำดับ (Ranking)</h3>
                 <hr />
@@ -204,7 +204,7 @@
     @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     <a asp-action="Index">Back to List</a>
 </div> *@
-
+@* style='width:100px; height:25px; *@
 @section Scripts {
     <script>
         $(document).ready(function () {
@@ -218,10 +218,10 @@
                         $('#tbRound1 tbody').empty();
                         for (var i = 0; i < data.length; i++) {
                             var newRow = "<tr>";
-                            newRow += "<td style='text-align:center;'><input type='text' style='width:100px; height:25px;'  /></td>";
-                            newRow += "<td style='text-align:center;'> " + data[i].team1 + "</td>";
-                            newRow += "<td style='text-align:center;'> <input type='text' style='width:25px; height:25px;' value='" + (data[i].score1 ?? "") + "'> : <input type='text' style='width:25px; height:25px;' value='" + (data[i].score2 ?? "") + "'></td>";
-                            newRow += "<td style='text-align:center;'> " + data[i].team2 + "</td>";
+                            newRow += "<td style='text-align:center;'><input  type='text' style='pading-right:10px;magin-right:15px' /></td>";
+                            newRow += "<td style='pading-left:10px;magin-left:15px'> " + data[i].team1 + "</td>";
+                            newRow += "<td style='text-align:center;'> <input type='text' class=" + "text-info form-control" + " style='width:25px; height:25px; border-radius: 5px;' value='" + (data[i].score1 ?? "") + "'> : <input type='text' style='width:25px; height:25px; border-radius: 5px;' value='" + (data[i].score2 ?? "") + "'></td>";
+                            newRow += "<td style='text-align:left;'> " + data[i].team2 + "</td>";
                             newRow += "</tr>";
                             $('#tbRound1 tbody').append(newRow);
                         }
