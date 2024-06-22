@@ -23,7 +23,7 @@
     <h2>@Html.DisplayFor(model => model.event_name)</h2>
     <div style=" display:flex ">
         <input class="form-control" style="width:110px;margin-right:5px;" type="text" value="@Html.DisplayFor(model => model.event_date)" />
-        <samp class="bi bi-at form-control" style="width:20px;padding-right:25px;"></samp>
+        <samp class="bi bi-at form-control" style="width:20px;height:45px;padding-top:13px; padding-right:25px;"></samp>
         <input class="form-control" style="width:350px;margin-right:5px;" type="text" value=" @Html.DisplayFor(model => model.event_location)" />
         <input class="form-control" style="width:170px;margin-right:5px;text-align:center;" type="text" value="@Html.DisplayFor(model => model.event_type)" />
         <input class="form-control" style="width:170px;margin-right:5px;text-align:center;" type="text" value="@Html.DisplayFor(model => model.event_round)" />
@@ -216,7 +216,7 @@
                         for (var i = 0; i < data.length; i++) {
                             var newRow = "<tr>";
                             newRow += "<td style='text-align:center;'><input  type='text' style='pading-right:10px;magin-right:15px' /></td>";
-                            newRow += "<td style='pading-left:10px;magin-left:15px'> " + data[i].team1 + "</td>";
+                            newRow += "<td style='text-align:Right;pading-left:10px;magin-left:15px'> " + data[i].team1 + "</td>";
                             newRow += "<td style='text-align:center;'> <input type='text' class=" + "text-info form-control" + " style='width:25px; height:25px; border-radius: 5px;' value='" + (data[i].score1 ?? "") + "'> : <input type='text' style='width:25px; height:25px; border-radius: 5px;' value='" + (data[i].score2 ?? "") + "'></td>";
                             newRow += "<td style='text-align:left;'> " + data[i].team2 + "</td>";
                             newRow += "</tr>";
