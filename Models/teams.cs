@@ -39,18 +39,49 @@ public class TeamRound1 {
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? _id { get; set; }
+     public string? event_id { get; set; } // รหัสงาน
+    public int round { get; set; } // รอบการแข่งขัน
+    public string? stadium { get; set; } // สนามกีฬา
     public string? team1 { get; set; } // ทีมที่ 1
     public string? team2 { get; set; } // ทีมที่ 2
-    public string? event_id { get; set; } // รหัสงาน
-    public int round { get; set; } // รอบการแข่งขัน
     public string? score1 { get; set; } // คะแนนทีมที่ 1
     public string? score2 { get; set; } // คะแนนทีมที่ 2
+    public string? resultscore { get; set; } // ผลการแข่งขัน
     public string? remark { get; set; } // หมายเหตุ
+    public int bhn { get; set; }
+    public int fbhn { get; set; }
+    public string? status { get; set; } // สถานะการแข่งขัน
     public DateTime create_date { get; set; } // วันที่สร้าง
     public string? create_by { get; set; } // สร้างโดย
     public DateTime update_date { get; set; } // วันที่แก้ไข
     public string? update_by { get; set; } // แก้ไขโดย
 }
+
+
+
+public class TeamRound2 {
+    
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? _id { get; set; }
+        public string? event_id { get; set; } // รหัสงาน
+        public int round { get; set; } // รอบการแข่งขัน
+        public string? stadium { get; set; } // สนามกีฬา
+        public string? team1 { get; set; } // ทีมที่ 1
+        public string? team2 { get; set; } // ทีมที่ 2
+        public string? score1 { get; set; } // คะแนนทีมที่ 1
+        public string? score2 { get; set; } // คะแนนทีมที่ 2
+        public string? resultscore { get; set; } // ผลการแข่งขัน
+        public string? remark { get; set; } // หมายเหตุ
+        public int bhn { get; set; }
+        public int fbhn { get; set; }
+        public string? status { get; set; } // สถานะการแข่งขัน
+        public DateTime create_date { get; set; } // วันที่สร้าง
+        public string? create_by { get; set; } // สร้างโดย
+        public DateTime update_date { get; set; } // วันที่แก้ไข
+        public string? update_by { get; set; } // แก้ไขโดย
+}
+
 
 // Path: Models/TeamGroup.cs
 // Compare this snippet from Models/teamgroup.cs:

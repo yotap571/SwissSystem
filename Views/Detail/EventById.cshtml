@@ -101,7 +101,7 @@
                         <div class="col-3">
                           @*   width:1080px; *@
                             @* <textarea class="text-info form-control" id="txtLog" style="height:600px;width:100%"></textarea> *@
-                        
+                             
                             <table class="table" id="tbTeam">
                                 <thead>
                                     <tr>
@@ -146,6 +146,8 @@
             <div class="tab-pane fade" id="Match1" role="tabpanel" aria-labelledby="Round1-tab">
                 <br />
                 <h3>การจัดลำดับ (Ranking)</h3>
+
+                <button id="BtnPrintPDF">Print to PDF</button>
                 <hr />
                 <div class="col-10">
                     <table class="table table-bordered" id="tbRound1">
@@ -164,11 +166,6 @@
                 <div class="col-2">
 
                 </div>
-
-
-
-
-
 
 
 
@@ -302,6 +299,40 @@
                 });
             });
 
+            document.getElementById('BtnPrintPDF').addEventListener('click', function () {
+                html2canvas(document.querySelector('#tbRound1')).then(canvas => {
+                    const pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+                    const imgWidth = 210; // A4 width in mm
+                    const imgHeight = canvas.height * imgWidth / canvas.width;
+                    const pageHeight = 297;  // A4 height in mm
+                    let position = 0;
+                    let heightLeft = imgHeight;
+                    let pageNum = 1;
+
+                    // Add the first page
+                    pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+
+                    // Add new pages if content overflows
+                    while (heightLeft >= 0) {
+                        position = heightLeft - imgHeight;
+                        pdf.addPage();
+                        pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, position, imgWidth, imgHeight);
+                        heightLeft -= pageHeight;
+                    }
+
+                    // Adding page numbers
+                    const totalPages = pdf.internal.getNumberOfPages();
+                    for (let i = 1; i <= totalPages; i++) {
+                        pdf.setPage(i);
+                        pdf.text('Page ' + i + ' of ' + totalPages, pdf.internal.pageSize.getWidth() / 2, pdf.internal.pageSize.getHeight() - 10, {
+                            align: 'center'
+                        });
+                    }
+
+                    pdf.save('teams.pdf');
+                });
+            });
 
 
 

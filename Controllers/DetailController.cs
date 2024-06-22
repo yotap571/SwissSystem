@@ -56,6 +56,30 @@ namespace Name
             Console.WriteLine(JsonConvert.SerializeObject(teamRound1));
             return new JsonResult(teamRound1);
         }
+        // 
+        // submit score
+        public JsonResult SubmitScore(string team1, string team2, string score1, string score2, string event_id)
+        {
+            var team = _teamRound1.Find(x => x.team1 == team1 && x.team2 == team2 && x.event_id == event_id).FirstOrDefault();
+            team.score1 = score1;
+            team.score2 = score2;
+            team.update_date = DateTime.Now;
+            team.update_by = "admin";
+            _teamRound1.ReplaceOne(x => x._id == team._id, team);
+            return new JsonResult("Success");
+        }
+
+
+
+        //round2 
+        public JsonResult GetTeamRound2(string event_id)
+        {
+            var teamRound2 = _teamRound1.Find(x => x.event_id == event_id && x.round == 1).ToList();
+            Console.WriteLine(JsonConvert.SerializeObject(teamRound2));
+            return new JsonResult(teamRound2);
+        }
+
+
 
         public JsonResult ConfirmRandom(List<PairTeam> pairTeam, string event_id)
         {
