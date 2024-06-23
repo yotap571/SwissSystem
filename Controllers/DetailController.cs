@@ -27,7 +27,10 @@ namespace Name
             _teamRound1 = database.GetCollection<TeamRound1>("teamRound1");
             _logger = logger;
         }
-
+        public IActionResult Pdf() { 
+        
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
